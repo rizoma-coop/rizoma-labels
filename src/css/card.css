@@ -1,0 +1,25 @@
+#labels {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 10cm;
+  height: 5cm;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 1rem;
+
+}
+.card__name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.card__pvp {
+  font-size: 2rem;
+  font-weight: 600;
+}

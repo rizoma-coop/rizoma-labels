@@ -1,0 +1,14 @@
+:root {
+  --color-primary: rgb(30, 129, 127);
+}
+
+figure,
+h1,
+h2 {
+  margin: 0;
+}
+
+body {
+  margin: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
