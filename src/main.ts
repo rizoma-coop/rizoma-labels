@@ -20,3 +20,6 @@ if (products) {
 }
 
 document.querySelector<HTMLDivElement>('#labels')!.innerHTML = labelsHTML
+document.querySelector<HTMLButtonElement>('#print')!.addEventListener('click', () => {
+  window.print()
+})
