@@ -12,3 +12,13 @@ body {
   margin: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+@media print {
+  body {
+    margin: 0;
+  }
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}

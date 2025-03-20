@@ -8,18 +8,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 10cm;
-  height: 5cm;
+  width: 8cm;
+  height: 4cm;
   border: 1px solid #ccc;
   box-sizing: border-box;
   padding: 1rem;
-
+  break-inside: avoid;
+  font-size: .8rem;
 }
 .card__name {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 .card__pvp {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
