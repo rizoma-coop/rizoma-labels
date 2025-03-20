@@ -10,19 +10,9 @@ let labelsHTML = ''
 const products = await fetchData(sheetId, range, apiKey)
 
 if (products) {
-  console.log('Sheet data:', products)
 
   products.forEach((product: string[]) => {
-
-    const productData = [
-      product[5],
-      product[6],
-      product[8],
-      product[11],
-      product[12]
-    ]
-
-    labelsHTML += generateLabel(productData)
+    labelsHTML += generateLabel(product)
   })
 
 } else {
