@@ -13,6 +13,10 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+a {
+  color: var(--color-primary);
+}
+
 @media print {
   body {
     margin: 0;

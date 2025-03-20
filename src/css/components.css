@@ -2,7 +2,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block-end: 3rem;
+  padding-block-end: 2rem;
 }
 .header__logo {
   display: flex;
