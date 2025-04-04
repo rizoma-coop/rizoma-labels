@@ -1,0 +1,18 @@
+.l-row,
+.l-stack {
+  display: flex;
+  gap: .2rem;
+
+  &.--space-between {
+    justify-content: space-between;
+  }
+  &.--end {
+    align-items: flex-end;
+  }
+  > .__full {
+    flex: 1;
+  }
+}
+.l-stack {
+  flex-direction: column;
+}
