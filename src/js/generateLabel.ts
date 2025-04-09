@@ -33,18 +33,24 @@ export default function generateLabel(product: Array<string>) {
       <div class="card__body">
         <div>
           <span class="card__pvp">${pvp}</span>
-          <span>€${getUnit(unit)}</span>
+          <span class="card__unit">€${getUnit(unit)}</span>
         </div>
-        <div class="l-row --space-between">
-          <div class="__full u-uppercase u-align-right l-stack">
+        <div class="l-row --space-between u-align-right" style="line-height: 1.1rem;">
+          <div class="__full u-uppercase l-stack">
             <div>IVA:</div>
             <div>Margem:</div>
             <div>P.Custo:</div>
           </div>
-          <div class="l-stack">
-            <div class="u-font-bold u-align-right">${iva}%</div>
-            <div class="u-font-bold u-align-right">${markup}%</div>
-            <div class="u-font-bold u-align-right">${price}€</div>
+          <div class="l-stack u-font-x-small">
+            <div>
+              <span class="u-font-bold u-placeholder">${iva}</span>%
+            </div>
+            <div>
+              <span class="u-font-bold u-placeholder">${markup}</span>%
+            </div>
+            <div>
+              <span class="u-font-bold u-placeholder">${price}</span>€
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +58,7 @@ export default function generateLabel(product: Array<string>) {
       <div class="card__footer">
         <div>
           <span class="card__checkbox"></span>
-          Bio
+          Bio/Natural
         </div>
         <div>
           <span class="card__checkbox"></span>
@@ -64,11 +70,15 @@ export default function generateLabel(product: Array<string>) {
         </div>
         <div>
           <span class="card__checkbox"></span>
-          Peq. Prod.
+          Peq.Prod.
         </div>
         <div>
           <span class="card__checkbox"></span>
-          < 50km
+          <50km
+        </div>
+        <div>
+          <span class="card__checkbox"></span>
+          <100km
         </div>
       </div>
     </div>

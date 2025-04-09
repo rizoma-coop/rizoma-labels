@@ -7,3 +7,15 @@
 .u-font-bold {
   font-weight: bold;
 }
+
+.u-font-x-small {
+  font-size: 1rem;
+}
+.u-font-small {
+  font-size: 1.3rem;
+}
+
+.u-placeholder {
+  display: inline-block;
+  min-width:1.8rem;
+}

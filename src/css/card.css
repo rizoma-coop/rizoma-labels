@@ -8,13 +8,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 9.5cm;
-  height: 5cm;
+  width: 8.5cm;
+  height: 6cm;
   border: 1px solid #ccc;
   box-sizing: border-box;
   padding: .4rem .7rem;
   break-inside: avoid;
-  font-size: .9rem;
+  font-size: .8rem;
 }
 .card__header {
   display: flex;
@@ -30,7 +30,6 @@
 .card__footer {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
   > * {
     display: flex;
     flex-direction: column;
@@ -40,16 +39,19 @@
   }
 }
 .card__name {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 .card__brand {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 .card__pvp {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
+}
+.card__unit {
+  font-size: 1.3rem;
 }
 .card__checkbox {
   display: inline-block;
