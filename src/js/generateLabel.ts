@@ -29,7 +29,7 @@ export default function generateLabel(product: Array<string>) {
         </h3>
       </div>
       <div class="card__body">
-        <div>
+        <div class="card__price">
           <span class="card__pvp">${pvp}</span>
           <span class="card__unit">€${getUnit(unit)}</span>
         </div>

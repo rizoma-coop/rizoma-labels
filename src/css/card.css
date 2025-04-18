@@ -12,7 +12,7 @@
   height: 6cm;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  padding: .4rem;
+  padding: .3rem;
   break-inside: avoid;
   font-size: .8rem;
 }
@@ -40,11 +40,13 @@
 
 .card__body {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border: 1px solid #222;
   height: 1.9cm;
   padding-inline: .4rem;
+}
+.card__price {
+  flex-grow: 1;
 }
 .card__pvp {
   font-size: 3.5rem;
@@ -62,12 +64,12 @@
   height: 100%;
   padding-block: .4rem;
   box-sizing: border-box;
-  min-width: 2.8cm;
+  min-width: 2.83cm;
   table {
     height: 100%;
   }
   td:first-child {
-    padding-inline-end: .4rem;
+    padding-inline-end: .3rem;
     font-size: .7rem;
   }
 }
