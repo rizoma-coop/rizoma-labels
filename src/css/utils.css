@@ -1,7 +1,7 @@
 .u-uppercase {
   text-transform: uppercase;
 }
-.u-align-right {
+.u-text-right {
   text-align: right;
 }
 .u-font-bold {
@@ -17,5 +17,5 @@
 
 .u-placeholder {
   display: inline-block;
-  min-width:1.8rem;
+  min-width: 1.8rem;
 }

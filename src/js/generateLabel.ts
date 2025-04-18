@@ -20,66 +20,38 @@ export default function generateLabel(product: Array<string>) {
     <div class="card">
       <div class="card__header">
         <h2 class="card__name">${name}</h2>
-        <div class="l-row --space-between --end">
+        <div class="u-uppercase">Marca, origem</div>
+        <h3 class="card__brand">
+          ${brand}
           ${
-            brand ? `<h3 class="card__brand">${brand}</h3>` : ''
+            origin ? `, ${origin}` : ''
           }
-          ${
-            origin ? `<span>ORIGEM: ${origin}</span>` : ''
-          }
-        </div>
+        </h3>
       </div>
-      <span class="separator"></span>
       <div class="card__body">
         <div>
           <span class="card__pvp">${pvp}</span>
           <span class="card__unit">€${getUnit(unit)}</span>
         </div>
-        <div class="l-row --space-between u-align-right" style="line-height: 1.1rem;">
-          <div class="__full u-uppercase l-stack">
-            <div>IVA:</div>
-            <div>Margem:</div>
-            <div>P.Custo:</div>
-          </div>
-          <div class="l-stack u-font-x-small">
-            <div>
-              <span class="u-font-bold u-placeholder">${iva}</span>%
-            </div>
-            <div>
-              <span class="u-font-bold u-placeholder">${markup}</span>%
-            </div>
-            <div>
-              <span class="u-font-bold u-placeholder">${price}</span>€
-            </div>
-          </div>
+        <div class="card__details">
+          <table>
+            <tr>
+              <td>IVA</td>
+              <td class="u-font-bold u-text-right">${iva}%</td>
+            </tr>
+            <tr>
+              <td>Mark-up</td>
+              <td class="u-font-bold u-text-right">${markup}%</td>
+            </tr>
+            <tr>
+              <td>P.Custo</td>
+              <td class="u-font-bold u-text-right">${price}€</td>
+            </tr>
+          </table>
         </div>
       </div>
-      <span class="separator"></span>
       <div class="card__footer">
-        <div>
-          <span class="card__checkbox"></span>
-          Bio/Natural
-        </div>
-        <div>
-          <span class="card__checkbox"></span>
-          Rizomi
-        </div>
-        <div>
-          <span class="card__checkbox"></span>
-          Vegan
-        </div>
-        <div>
-          <span class="card__checkbox"></span>
-          Peq.Prod.
-        </div>
-        <div>
-          <span class="card__checkbox"></span>
-          <50km
-        </div>
-        <div>
-          <span class="card__checkbox"></span>
-          <100km
-        </div>
+          <img src="footer.webp" alt="footer" class="card__footer-img" />
       </div>
     </div>
   `

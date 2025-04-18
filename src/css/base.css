@@ -12,11 +12,16 @@ h3 {
 body {
   margin: 2rem;
   font-optical-sizing: auto;
-  font-family: "Roboto Condensed", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Questrial", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 a {
   color: var(--color-primary);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 @media print {
