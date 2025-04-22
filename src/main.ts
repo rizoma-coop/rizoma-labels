@@ -12,7 +12,10 @@ const products = await fetchData(sheetId, range, apiKey)
 if (products) {
 
   products.forEach((product: string[]) => {
-    labelsHTML += generateLabel(product)
+    const isToPrint = product[8] === 'FALSE'
+    if (isToPrint) {
+      labelsHTML += generateLabel(product)
+    }
   })
 
 } else {
