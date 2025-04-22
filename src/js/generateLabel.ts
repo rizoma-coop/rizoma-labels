@@ -37,15 +37,15 @@ export default function generateLabel(product: Array<string>) {
           <table>
             <tr>
               <td>IVA</td>
-              <td class="u-font-bold u-text-right">${iva}%</td>
+              <td class="u-font-bold u-text-right">${iva || ''}%</td>
             </tr>
             <tr>
               <td>Mark-up</td>
-              <td class="u-font-bold u-text-right">${markup}%</td>
+              <td class="u-font-bold u-text-right">${markup || ''}%</td>
             </tr>
             <tr>
               <td>P.Custo</td>
-              <td class="u-font-bold u-text-right">${price}€</td>
+              <td class="u-font-bold u-text-right">${price || ''}€</td>
             </tr>
           </table>
         </div>
