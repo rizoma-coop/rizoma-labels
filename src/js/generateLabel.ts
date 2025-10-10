@@ -30,15 +30,15 @@ export default function generateLabel(product: Array<string>) {
           <table>
             <tr>
               <td>P.Custo</td>
-              <td class="u-font-bold u-text-right">€</td>
+              <td class="u-text-right">€</td>
             </tr>
             <tr>
               <td>IVA</td>
-              <td class="u-font-bold u-text-right">${iva || ''}%</td>
+              <td class="u-text-right">${iva || ''}%</td>
             </tr>
             <tr>
               <td>Mark-up</td>
-              <td class="u-font-bold u-text-right">${markup.split(',')[1] || ''}%</td>
+              <td class="u-text-right">${markup.split(',')[1] || ''}%</td>
             </tr>
           </table>
         </div>

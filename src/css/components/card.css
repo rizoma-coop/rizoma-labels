@@ -8,8 +8,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 8cm;
-  height: 8cm;
+  width: 7cm;
+  height: 5.85cm;
   border: 1px solid #222;
   box-sizing: border-box;
   break-inside: avoid;
@@ -20,17 +20,16 @@
 .card__header {
   min-height: 1.8rem;
   flex-grow: 1;
-  padding: .6rem;
+  padding: .4rem;
   overflow: hidden;
 }
 .card__name {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   white-space: nowrap;
-  height: .7cm;
 }
 .card__brand {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-block-start: .2rem;
 }
@@ -38,28 +37,29 @@
 /* BODY */
 .card__body {
   display: flex;
-  align-items: center;
+  align-items: end;
+  gap: 2rem;
+  box-sizing: border-box;
   border-block: 1px solid #222;
   height: 1.9cm;
-  padding-inline: .4rem;
+  padding: .4rem;
 }
 .card__price {
   flex-grow: 1;
+  text-align: end;
 }
 .card__pvp {
   font-size: 3.5rem;
   font-weight: 800;
 }
 .card__unit {
-  font-size: 1.3rem;
+  font-size: .8rem;
 }
 .card__details {
   display: flex;
-  align-items: center;
-  padding-inline-start: .4rem;
+  align-items: space-between;
   text-transform: uppercase;
   height: 100%;
-  padding-block: .4rem;
   box-sizing: border-box;
   min-width: 2.83cm;
   table {
@@ -75,7 +75,7 @@
 .card__footer {
   display: flex;
   gap: .6rem;
-  padding: .6rem;
+  padding: .4rem;
   ul {
     display: flex;
     flex-direction: column;

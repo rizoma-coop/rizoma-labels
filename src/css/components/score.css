@@ -1,0 +1,25 @@
+.score {
+  width: .9rem;
+  height: .9rem;
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: .7rem;
+  border-radius: 100%;
+  padding-block-start: .2rem;
+
+  background-color: #ccc;
+
+  /* show background-color on print */
+  -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+  color-adjust: exact !important;                 /* Firefox 48 – 96 */
+  print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+}
+.score--large {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.5rem;
+  line-height: 0;
+}
