@@ -1,6 +1,9 @@
-export default function generateLabel(product: Array<string>) {
+import { Product, Score } from './types'
+import { scoreColors } from './config'
 
-  const [name, unit, brand, iva, markup, score] = product
+export default function generateLabel(product: Product) {
+
+  const {name, unit, brand, iva, markup, scores, finalScore} = product
 
   function getUnit(unit: string) {
     unit = unit.toLowerCase()
@@ -26,50 +29,35 @@ export default function generateLabel(product: Array<string>) {
         <div class="card__price">
           <span class="card__unit">€${getUnit(unit)}</span>
         </div>
-        <div class="card__details">
-          <table>
-            <tr>
-              <td>P.Custo</td>
-              <td class="u-text-right">€</td>
-            </tr>
-            <tr>
-              <td>IVA</td>
-              <td class="u-text-right">${iva || ''}%</td>
-            </tr>
-            <tr>
-              <td>Mark-up</td>
-              <td class="u-text-right">${markup.split(',')[1] || ''}%</td>
-            </tr>
-          </table>
-        </div>
+        <table class="card__details">
+          <tr>
+            <td>P.Custo</td>
+            <td class="u-text-right">€</td>
+          </tr>
+          <tr>
+            <td>IVA</td>
+            <td class="u-text-right">${iva || ''}%</td>
+          </tr>
+          <tr>
+            <td>Mark-up</td>
+            <td class="u-text-right">${markup.split(',')[1] || ''}%</td>
+          </tr>
+        </table>
       </div>
       <div class="card__footer">
-        <div class="score score--large"><!--${score}-->A</div>
+        <div class="score score--large" style="--score-color: ${scoreColors[finalScore as keyof typeof scoreColors]};">${finalScore}</div>
         <ul>
-          <li>
-            <span class="score">B</span>
-            Lorem ipsum
-          </li>
-          <li>
-            <span class="score">B</span>
-            Lorem ipsum
-          </li>
-          <li>
-            <span class="score">C</span>
-            Lorem ipsum
-          </li>
-          <li>
-            <span class="score">B</span>
-            Lorem ipsum
-          </li>
-          <li>
-            <span class="score">B</span>
-            Lorem ipsum
-          </li>
-          <li>
-            <span class="score">C</span>
-            Lorem ipsum
-          </li>
+          ${scores.map((score: Score) => `
+            ${score.score ? /* html */`
+            <li>
+              <span
+                class="score"
+                style="--score-color: ${scoreColors[score.score as keyof typeof scoreColors]};"
+              >${score.score}</span>
+              ${score.description}
+            </li>
+            ` : ''}
+          `).join('')}
         </ul>
       </div>
     </div>
