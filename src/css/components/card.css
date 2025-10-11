@@ -1,0 +1,88 @@
+#labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 7cm;
+  height: 5.85cm;
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  break-inside: avoid;
+  font-size: .8rem;
+}
+
+/* HEADER */
+.card__header {
+  min-height: 1.8rem;
+  flex-grow: 1;
+  padding: .4rem;
+  overflow: hidden;
+}
+.card__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.card__brand {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-block-start: .2rem;
+}
+
+/* BODY */
+.card__body {
+  display: flex;
+  align-items: end;
+  gap: 1.6rem;
+  box-sizing: border-box;
+  border-block: 1px solid #222;
+  height: 1.9cm;
+  padding: .4rem;
+}
+.card__price {
+  flex-grow: 1;
+  text-align: end;
+}
+.card__pvp {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+.card__unit {
+  font-size: .8rem;
+}
+.card__details {
+  height: 100%;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  td:first-child {
+    font-size: .7rem;
+  }
+  td:last-child {
+    padding-inline-start: 1rem;
+  }
+}
+
+/* FOOTER */
+.card__footer {
+  display: flex;
+  gap: .6rem;
+  padding: .4rem;
+  font-size: .7rem;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    flex: 1;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+  }
+}

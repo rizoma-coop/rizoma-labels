@@ -1,5 +1,7 @@
 @import 'base.css';
 @import 'layout.css';
-@import 'components.css';
-@import 'card.css';
+@import 'components/button.css';
+@import 'components/score.css';
+@import 'components/card.css';
+@import 'components/header.css';
 @import 'utils.css';
