@@ -1,5 +1,7 @@
 # Rizoma Labels
 
+Online at https://rizomacoop-etiquetas.netlify.app
+
 A web application for generating and printing product labels for RizomaCoop. The application fetches product data from a Google Sheets spreadsheet and generates printable labels with product information, pricing, and sustainability scores.
 
 ## Getting Started
