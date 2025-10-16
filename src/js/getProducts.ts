@@ -6,6 +6,7 @@ export default function getProducts(data: any[]) {
   const products: Product[] = []
 
   data.forEach((column: any, columnIndex: number) => {
+
     column.values.forEach((value: any, rowIndex: number) => {
 
       if (rowIndex === 0 || rowIndex === 1) {
@@ -51,6 +52,11 @@ export default function getProducts(data: any[]) {
       }
 
     })
+  })
+
+  // sort products by name
+  products.sort((a: Product, b: Product) => {
+    return a.name.toLowerCase().localeCompare(b.name.toLowerCase())
   })
 
   return products

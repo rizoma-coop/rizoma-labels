@@ -36,16 +36,19 @@ export default function generateLabel(product: Product) {
           </tr>
           <tr>
             <td>IVA</td>
-            <td class="u-text-right">${iva || ''}%</td>
+            <td class="u-text-right">${iva || ''} %</td>
           </tr>
           <tr>
-            <td>Mark-up</td>
-            <td class="u-text-right">${markup.split(',')[1] || ''}%</td>
+            <td>Markup</td>
+            <td class="u-text-right">${markup || ''} %</td>
           </tr>
         </table>
       </div>
-      <div class="card__footer">
-        <div class="score score--large" style="--score-color: ${scoreColors[finalScore as keyof typeof scoreColors]};">${finalScore}</div>
+      <div class="card__score">
+        <div class="card__score-header">
+          <span class="card__score-label">Rizoscore</span>
+          <div class="score score--large" style="--score-color: ${scoreColors[finalScore as keyof typeof scoreColors]};">${finalScore}</div>
+        </div>
         <ul>
           ${scores.map((score: Score) => `
             ${score.score ? /* html */`

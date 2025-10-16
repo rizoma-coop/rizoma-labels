@@ -19,35 +19,36 @@
 
 /* HEADER */
 .card__header {
-  min-height: 1.8rem;
-  flex-grow: 1;
+  min-height: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
   padding: .4rem;
   overflow: hidden;
 }
 .card__name {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
 }
 .card__brand {
   font-size: 1rem;
   font-weight: 500;
-  margin-block-start: .2rem;
 }
 
 /* BODY */
 .card__body {
   display: flex;
-  align-items: end;
-  gap: 1.6rem;
+  flex-grow: 1;
+  gap: 1.2rem;
   box-sizing: border-box;
-  border-block: 1px solid #222;
-  height: 1.9cm;
+  border-block: 1px solid #AAA;
   padding: .4rem;
 }
 .card__price {
   flex-grow: 1;
   text-align: end;
+  align-self: end;
 }
 .card__pvp {
   font-size: 3.5rem;
@@ -57,26 +58,30 @@
   font-size: .8rem;
 }
 .card__details {
-  height: 100%;
   box-sizing: border-box;
   text-transform: uppercase;
+  align-self: center;
+  td {
+    padding-block-start: .3rem;
+  }
   td:first-child {
     font-size: .7rem;
   }
   td:last-child {
-    padding-inline-start: 1rem;
+    min-width: 2rem;
+    padding-inline-start: .6rem;
   }
 }
 
 /* FOOTER */
-.card__footer {
+.card__score {
   display: flex;
-  gap: .6rem;
-  padding: .4rem;
+  align-items: stretch;
   font-size: .7rem;
   ul {
-    display: flex;
-    flex-direction: column;
+    padding: .3rem .4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: .3rem;
     flex: 1;
   }
@@ -85,4 +90,16 @@
     align-items: center;
     gap: .3rem;
   }
+}
+
+.card__score-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+  padding: .4rem;
+  border-inline-end: 1px dashed #DDD;
+}
+.card__score-label {
+  color: #666;
 }
