@@ -1,5 +1,5 @@
 .score {
-  --size: 1rem;
+  --size: .8rem;
   min-width: var(--size);
   width: var(--size);
   height: var(--size);
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  font-size: .7rem;
+  font-size: .6rem;
   border-radius: 100%;
 
   background-color: var(--score-color, #ccc);

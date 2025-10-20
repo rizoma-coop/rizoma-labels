@@ -6,8 +6,8 @@ export const columnsArray = [
   "score1Description", // N
   "score2", // S
   "score2Description", // T
-  "score3", // Y
-  "score3Description", // Z
+  //"score3", // Y
+  //"score3Description", // Z
   "score4", // AE
   "score4Description", // AF
   "score5", // AK

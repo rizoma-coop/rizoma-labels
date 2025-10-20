@@ -80,8 +80,8 @@
   font-size: .7rem;
   ul {
     padding: .3rem .4rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: .3rem;
     flex: 1;
   }
