@@ -32,23 +32,27 @@ export default function getProducts(data: any[]) {
 
       const columnName = columnsArray[columnIndex]
 
-      if (columnName === 'name') {
-        const { name, unit, brand } = getProductDetails(value)
-        products[rowIndex].name = name
-        products[rowIndex].unit = unit
-        products[rowIndex].brand = brand
-      } else if (columnName.startsWith('score')) {
+      if (columnName) {
 
-        if (columnName.endsWith('Description')) {
-          products[rowIndex].scores[products[rowIndex].scores.length - 1].description = value
+        if (columnName === 'name') {
+          const { name, unit, brand } = getProductDetails(value)
+          products[rowIndex].name = name
+          products[rowIndex].unit = unit
+          products[rowIndex].brand = brand
+        } else if (columnName.startsWith('score')) {
+
+          if (columnName.endsWith('Description')) {
+            products[rowIndex].scores[products[rowIndex].scores.length - 1].description = value
+          } else {
+            products[rowIndex].scores.push({
+              score: value || '',
+              description: '',
+            })
+          }
         } else {
-          products[rowIndex].scores.push({
-            score: value || '',
-            description: '',
-          })
+          products[rowIndex][columnName as keyof Product] = value || ''
         }
-      } else {
-        products[rowIndex][columnName as keyof Product] = value || ''
+        
       }
 
     })
