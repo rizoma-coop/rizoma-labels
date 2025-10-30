@@ -3,7 +3,7 @@ import { scoreColors } from './config'
 
 export default function generateLabel(product: Product) {
 
-  const {name, unit, brand, iva, markup, scores, finalScore} = product
+  const {name, unit, brand, iva, markup, scores, finalScore, done, exist, category} = product
 
   function getUnit(unit: string) {
     unit = unit.toLowerCase()
@@ -20,7 +20,12 @@ export default function generateLabel(product: Product) {
 
   return /* html */`
 
-    <div class="card">
+    <div
+      class="card js_card"
+      data-category="${category}"
+      ${exist ? 'data-exist' : ''}
+      ${done ? 'data-done' : ''}
+    >
       <div class="card__header">
         <h2 class="card__name">${name}</h2>
         <h3 class="card__brand">${brand}</h3>

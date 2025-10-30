@@ -1,4 +1,5 @@
 export const columnsArray = [
+  // this must match VITE_SHEET_COLUMNS in .env file
   "name", // E Name-Unit-Brand
   "iva", // F
   "markup", // G
@@ -14,7 +15,10 @@ export const columnsArray = [
   "score5Description", // AL
   "score6", // AQ
   "score6Description", // AR
-  "finalScore" // AT
+  "finalScore", // AT
+  "exist", // AV
+  "done", // AW
+  "fresh" // AX
 ]
 
 export const scoreColors = {

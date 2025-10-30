@@ -1,3 +1,9 @@
+export type Category = 'fresh' | 'others'
+
+export type Score = {
+  score: string
+  description: string
+}
 
 export type Product = {
   name: string
@@ -7,9 +13,7 @@ export type Product = {
   markup: string
   finalScore: string
   scores: Score[]
-}
-
-export type Score = {
-  score: string
-  description: string
+  exist: boolean
+  done: boolean
+  category: Category
 }

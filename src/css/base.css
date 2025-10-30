@@ -37,3 +37,32 @@ table {
     display: none !important;
   }
 }
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+legend {
+  font-weight: 600;
+  margin-block-end: 1rem;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @media (min-width: 1400px) {
+    flex-direction: row;
+  }
+}
+
+
+#sidebar {
+  display: flex;
+  gap: 2rem;
+  @media (min-width: 1400px) {
+    width: 16rem;
+    flex-direction: column;
+  }
+}

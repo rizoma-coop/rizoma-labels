@@ -1,8 +1,13 @@
-﻿import './css/main.css'
+﻿import '@awesome.me/webawesome/dist/styles/themes/default.css'
+import './css/main.css'
+
+import '@awesome.me/webawesome/dist/components/checkbox/checkbox.js';
+
 import fetchData from './js/fetchData'
 import generateLabel from './js/generateLabel'
 import getRange from './js/getRange'
 import getProducts from './js/getProducts'
+import initFilters from './js/filters'
 import { Product } from './js/types'
 
 const sheetId = import.meta.env.VITE_SHEET_ID as string
@@ -37,4 +42,4 @@ document.querySelector<HTMLButtonElement>('#print')!.addEventListener('click', (
   window.print()
 })
 
-
+initFilters()

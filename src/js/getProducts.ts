@@ -1,5 +1,5 @@
 import { columnsArray } from './config'
-import { Product } from './types'
+import { Product, Category } from './types'
 
 export default function getProducts(data: any[]) {
 
@@ -27,6 +27,9 @@ export default function getProducts(data: any[]) {
           markup: '',
           scores: [],
           finalScore: '',
+          done: false,
+          exist: false,
+          category: 'others' as Category,
         } as Product
       }
 
@@ -34,23 +37,29 @@ export default function getProducts(data: any[]) {
 
       if (columnName) {
 
+        const product = products[rowIndex]
+
         if (columnName === 'name') {
           const { name, unit, brand } = getProductDetails(value)
-          products[rowIndex].name = name
-          products[rowIndex].unit = unit
-          products[rowIndex].brand = brand
+          product.name = name
+          product.unit = unit
+          product.brand = brand
         } else if (columnName.startsWith('score')) {
 
           if (columnName.endsWith('Description')) {
-            products[rowIndex].scores[products[rowIndex].scores.length - 1].description = value
+            product.scores[product.scores.length - 1].description = value
           } else {
-            products[rowIndex].scores.push({
+            product.scores.push({
               score: value || '',
               description: '',
             })
           }
-        } else {
-          products[rowIndex][columnName as keyof Product] = value || ''
+        } else if (columnName === 'fresh') {
+          product.category = value === 'TRUE' ? 'fresh' : 'others'
+        } else if (columnName === 'exist' || columnName === 'done') {
+          product[columnName] = value === 'TRUE'
+        } else if (columnName === 'iva' || columnName === 'markup' || columnName === 'finalScore') {
+          product[columnName] = value || ''
         }
         
       }
