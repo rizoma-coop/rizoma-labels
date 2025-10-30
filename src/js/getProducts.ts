@@ -1,8 +1,9 @@
-import { columnsArray } from './config'
-import { Product, Category } from './types'
+import { SHEET_COLUMNS } from '../utils/config'
+import { Product, Category } from '../utils/types'
 
 export default function getProducts(data: any[]) {
 
+  const columns = SHEET_COLUMNS.map((column: any) => column.name)
   const products: Product[] = []
 
   data.forEach((column: any, columnIndex: number) => {
@@ -33,7 +34,7 @@ export default function getProducts(data: any[]) {
         } as Product
       }
 
-      const columnName = columnsArray[columnIndex]
+      const columnName = columns[columnIndex]
 
       if (columnName) {
 
@@ -57,8 +58,10 @@ export default function getProducts(data: any[]) {
         } else if (columnName === 'fresh') {
           product.category = value === 'TRUE' ? 'fresh' : 'others'
         } else if (columnName === 'exist' || columnName === 'done') {
+          // @ts-ignore
           product[columnName] = value === 'TRUE'
         } else if (columnName === 'iva' || columnName === 'markup' || columnName === 'finalScore') {
+          // @ts-ignore
           product[columnName] = value || ''
         }
         

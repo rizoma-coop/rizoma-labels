@@ -1,5 +1,5 @@
-import { Product, Score } from './types'
-import { scoreColors } from './config'
+import { SCORES_COLORS } from '../utils/config'
+import { Product, Score } from '../utils/types'
 
 export default function generateLabel(product: Product) {
 
@@ -52,7 +52,7 @@ export default function generateLabel(product: Product) {
       <div class="card__score">
         <div class="card__score-header">
           <span class="card__score-label">Rizoscore</span>
-          <div class="score score--large" style="--score-color: ${scoreColors[finalScore as keyof typeof scoreColors]};">${finalScore}</div>
+          <div class="score score--large" style="--score-color: ${SCORES_COLORS[finalScore as keyof typeof SCORES_COLORS]};">${finalScore}</div>
         </div>
         <ul>
           ${scores.map((score: Score) => `
@@ -60,7 +60,7 @@ export default function generateLabel(product: Product) {
             <li>
               <span
                 class="score"
-                style="--score-color: ${scoreColors[score.score as keyof typeof scoreColors]};"
+                style="--score-color: ${SCORES_COLORS[score.score as keyof typeof SCORES_COLORS]};"
               >${score.score}</span>
               ${score.description}
             </li>

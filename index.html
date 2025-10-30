@@ -23,19 +23,21 @@
       <p>Os dados das etiquetas vêm de uma <a target="_blank" href="https://docs.google.com/spreadsheets/d/1CttSZH7joKNz9IhdES0ziEgky08DP_tF4T7raYM6f98/edit?gid=1761116499#gid=1761116499">folha de cálculo de produtos</a>.</p>
     </header>
     <main>
-      <form id="sidebar" class="no-print l-stack">
+      <form id="sidebar" class="no-print">
         <h2>Filtros</h2>
-        <fieldset class="l-stack --s">
-          <legend>Tipo de produto</legend>
-          <wa-checkbox checked value="fresh" name="filter-category">Frescos</wa-checkbox>
-          <wa-checkbox checked value="others" name="filter-category">Outros</wa-checkbox>
-        </fieldset>
-        <fieldset class="l-stack --s">
-          <legend>Estado</legend>
-          <wa-checkbox name="filter-exist">Existe</wa-checkbox>
-          <wa-checkbox name="filter-done">Feita</wa-checkbox>
-        </fieldset>
-        <button id="print" class="button">Imprimir</button>
+        <div class="js_filters l-stack u-loading">
+          <fieldset class="l-stack --s">
+            <legend>Tipo de produto</legend>
+            <wa-checkbox checked value="fresh" name="filter-category" data-filter="fresh">Frescos</wa-checkbox>
+            <wa-checkbox checked value="others" name="filter-category" data-filter="others">Outros</wa-checkbox>
+          </fieldset>
+          <fieldset class="l-stack --s">
+            <legend>Estado</legend>
+            <wa-checkbox name="filter-exist" data-filter="exist">Existe</wa-checkbox>
+            <wa-checkbox name="filter-done" data-filter="done">Feita</wa-checkbox>
+          </fieldset>
+          <button id="print" class="button">Imprimir</button>
+        </div>
       </form>
       <div id="labels">
         A carregar dados...

@@ -1,4 +1,10 @@
-export default function initFilters() {
+import { FILTERS } from '../utils/config'
+
+export default async function initFilters() {
+
+  await getLocalStorageFilters()
+
+  filterLabels()
 
   const filtersElements = document.querySelectorAll<HTMLInputElement>('[name="filter-category"], [name="filter-exist"], [name="filter-done"]')
   
@@ -8,7 +14,8 @@ export default function initFilters() {
     })
   })
 
-  
+  return "done"
+
 }
 
 function filterLabels() {
@@ -17,8 +24,7 @@ function filterLabels() {
   if (!labels) return
 
   const filtersToHide = getFilters()
-
-  console.log(filtersToHide)
+  localStorage.setItem('filtersToHide', JSON.stringify(filtersToHide))
 
   labels.forEach((label: HTMLDivElement) => {
     const category = label.getAttribute('data-category') as string
@@ -63,4 +69,29 @@ function getFilters() {
   }
   
   return filtersToHide
+}
+
+async function getLocalStorageFilters() {
+  
+  const localStorageFilters = localStorage.getItem('filtersToHide')
+  
+  if (!localStorageFilters) return
+
+  const filters = await JSON.parse(localStorageFilters)
+
+  FILTERS.forEach((filterName: string) => {
+    const checkbox = document.querySelector(`[data-filter="${filterName}"]`)
+    if (checkbox) {
+      updateCheckbox(checkbox, filters, filterName)
+    }
+  })
+}
+
+function updateCheckbox(checkbox: any,filters: string[], filterName: string) {
+
+  if (filters.includes(filterName)) {
+    checkbox.removeAttribute('checked')
+  } else {
+    checkbox.setAttribute('checked', '')
+  }
 }
