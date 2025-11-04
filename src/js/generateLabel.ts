@@ -21,14 +21,14 @@ export default function generateLabel(product: Product) {
   return /* html */`
 
     <div
-      class="card js_card"
+      class="card card--${category} js_card"
       data-category="${category}"
       ${exist ? 'data-exist' : ''}
       ${done ? 'data-done' : ''}
     >
       <div class="card__header">
         <h2 class="card__name">${name}</h2>
-        <h3 class="card__brand">${brand}</h3>
+        <h3 class="card__brand">${brand || ''}</h3>
       </div>
       <div class="card__body">
         <div class="card__price">
@@ -49,6 +49,7 @@ export default function generateLabel(product: Product) {
           </tr>
         </table>
       </div>
+      ${category !== 'fresh' ? /* html */`
       <div class="card__score">
         <div class="card__score-header">
           <span class="card__score-label">Rizoscore</span>
@@ -68,6 +69,7 @@ export default function generateLabel(product: Product) {
           `).join('')}
         </ul>
       </div>
+      ` : ''}
     </div>
   `
 }

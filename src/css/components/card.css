@@ -16,6 +16,10 @@
   font-size: .8rem;
 }
 
+.card--fresh {
+  height: 5cm;
+}
+
 /* HEADER */
 .card__header {
   min-height: 2.4rem;
@@ -33,6 +37,9 @@
 .card__brand {
   font-size: 1rem;
   font-weight: 500;
+}
+.card--fresh .card__brand {
+  height: 3rem;
 }
 
 /* BODY */
@@ -67,8 +74,8 @@
     font-size: .7rem;
   }
   td:last-child {
-    min-width: 2rem;
-    padding-inline-start: .6rem;
+    min-width: 2.4rem;
+    padding-inline-start: .2rem;
   }
 }
 

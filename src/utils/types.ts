@@ -1,4 +1,9 @@
-export type Category = 'fresh' | 'others'
+export type Category =
+| 'fresh'
+| 'transformed'
+| 'dried'
+| 'not-food'
+| 'others'
 
 export type Score = {
   score: string

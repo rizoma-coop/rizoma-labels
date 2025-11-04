@@ -1,4 +1,4 @@
-import { SHEET_COLUMNS } from '../utils/config'
+import { SHEET_COLUMNS, CATEGORIES } from '../utils/config'
 import { Product, Category } from '../utils/types'
 
 export default function getProducts(data: any[]) {
@@ -21,6 +21,7 @@ export default function getProducts(data: any[]) {
 
       if (!products[rowIndex]) {
         products[rowIndex] = {
+          category: CATEGORIES[4].code as Category,
           name: '',
           unit: '',
           brand: '',
@@ -30,7 +31,6 @@ export default function getProducts(data: any[]) {
           finalScore: '',
           done: false,
           exist: false,
-          category: 'others' as Category,
         } as Product
       }
 
@@ -55,8 +55,12 @@ export default function getProducts(data: any[]) {
               description: '',
             })
           }
-        } else if (columnName === 'fresh') {
-          product.category = value === 'TRUE' ? 'fresh' : 'others'
+        } else if (columnName === 'category') {
+          if (value) {
+            product.category = CATEGORIES.find((category: any) => category.description === value)?.code as Category
+          } else {
+            product.category = CATEGORIES[4].code as Category
+          }
         } else if (columnName === 'exist' || columnName === 'done') {
           // @ts-ignore
           product[columnName] = value === 'TRUE'

@@ -12,7 +12,34 @@ export const FILTERS = [
   'done'
 ]
 
+export const CATEGORIES = [
+  {
+    description: 'FRESCOS',
+    code: 'fresh'
+  },
+  {
+    description: 'TRANSFORMADOS',
+    code: 'transformed'
+  },
+  {
+    description: 'SECOS',
+    code: 'dried'
+  },
+  {
+    description: 'NÃO ALIMENTAR',
+    code: 'not-food'
+  },
+  {
+    description: '',
+    code: 'others'
+  }
+]
+
 export const SHEET_COLUMNS = [
+  {
+    name: 'category',
+    cell: 'D'
+  },
   {
     name: 'name',
     cell: 'E'
@@ -84,9 +111,5 @@ export const SHEET_COLUMNS = [
   {
     name: 'done',
     cell: 'AW'
-  },
-  {
-    name: 'fresh',
-    cell: 'AX'
   },
 ]

@@ -22,13 +22,16 @@
       </div>
     </header>
     <main>
-      <div id="sidebar">
+      <div id="sidebar" class="no-print">
         <form class="l-stack">
           <h2>Filtros</h2>
           <div class="js_filters l-stack u-loading">
             <fieldset class="l-stack --s">
               <legend>Tipo de produto</legend>
               <wa-checkbox checked value="fresh" name="filter-category" data-filter="fresh">Frescos</wa-checkbox>
+              <wa-checkbox checked value="transformed" name="filter-category" data-filter="transformed">Transformados</wa-checkbox>
+              <wa-checkbox checked value="dried" name="filter-category" data-filter="dried">Secos</wa-checkbox>
+              <wa-checkbox checked value="not-food" name="filter-category" data-filter="not-food">Não alimentar</wa-checkbox>
               <wa-checkbox checked value="others" name="filter-category" data-filter="others">Outros</wa-checkbox>
             </fieldset>
             <fieldset class="l-stack --s">
